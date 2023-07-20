@@ -1,12 +1,8 @@
-/**
- * File: 3-islower.c
- * Auth: Tamer Maarouf
- */
-
 #include "main.h"
 
 /**
- * _islower - check if character is lowercase.
+ * _islower - Checks if a character is lowercase.
+ *
  * @c: The character to be checked.
  *
  * Return: 1 if character is lowercas. 0 otherwise.
