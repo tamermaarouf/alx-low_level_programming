@@ -13,7 +13,9 @@ int main(void)
 	ch = 97;
 	while (ch < 123)
 	{
-		putchar(ch);
+		if (ch != 101)
+			if (ch != 113)
+				putchar(ch);
 		ch++;
 	}
 	putchar('\n');
