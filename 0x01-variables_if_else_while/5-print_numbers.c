@@ -10,10 +10,10 @@ int main(void)
 {
 	int num;
 
-	num = 0;
-	while (num < 10)
+	num = 48;
+	while (num < 58)
 	{
-		printf("%d\n", num);
+		putchar(num);
 		num++;
 	}
 	return (0);
