@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * more_numbers - print 10 times the number from 0 -> 14
+ *
+ * Return: Nothing.
+ */
+
 void more_numbers(void)
 {
 	int index, counter;
