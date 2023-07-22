@@ -10,22 +10,27 @@
 
 void print_square(int size)
 {
-	int row, col;
-
-	row = 1;
-	while (row <= size)
+	if (size <= 0)
+		_putchar('\n');
+	else
 	{
-		col = 1;
-		while (col <= size)
+		int row, col;
+
+		row = 1;
+		while (row <= size)
 		{
-			_putchar(35);
-			if (col == size)
-				_putchar('\n');
-			++col;
+			col = 1;
+			while (col <= size)
+			{
+				_putchar(35);
+				if (col == size)
+					_putchar('\n');
+				++col;
+			}
+			++row;
 		}
-		++row;
+		_putchar('\n');
 	}
-	_putchar('\n');
 }
 
 
