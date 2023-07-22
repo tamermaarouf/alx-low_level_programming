@@ -17,7 +17,7 @@ void print_line(int n)
 		int counter;
 
 		counter = 0;
-		while (counter <= n)
+		while (counter < n)
 		{
 			_putchar(95);
 			++counter;
