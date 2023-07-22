@@ -31,11 +31,11 @@ void print_times_table(int n)
 						printf("%i, ", result);
 				}
 				else
-					printf("%i", result);
+					printf("%i\n", result);
 				index++;
 			}
-			printf("\n");
 			count++;
 		}
+		printf("\n");
 	}
 }
