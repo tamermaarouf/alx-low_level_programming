@@ -22,11 +22,14 @@ void print_diagonal(int n)
 			while (col <= row)
 			{
 				if (row == col)
+				{
 					_putchar(92);
-				_putchar(' ');
+					_putchar('\n');
+				}
+				else
+					_putchar(' ');
 				++col;
 			}
-			_putchar('\n');
 			++row;
 		}
 	}
