@@ -14,13 +14,15 @@ int main(void)
 	while (count <= 100)
 	{
 		if ((count % 3 == 0) && (count % 5 == 0))
-			printf("%s ", "FizzBuzz");
+			printf("%s", "FizzBuzz");
 		else if (count % 3 == 0)
-			printf("%s ", "Fizz");
+			printf("%s", "Fizz");
 		else if (count % 5 == 0)
-			printf("%s ", "Buzz");
+			printf("%s", "Buzz");
 		else
-			printf("%i ", count);
+			printf("%i", count);
+		if (count != 100)
+			printf(" ");
 		++count;
 	}
 	printf("\n");
