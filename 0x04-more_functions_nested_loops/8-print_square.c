@@ -29,7 +29,6 @@ void print_square(int size)
 			}
 			++row;
 		}
-		_putchar('\n');
 	}
 }
 
