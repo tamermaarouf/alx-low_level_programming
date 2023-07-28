@@ -20,7 +20,6 @@ int main(void)
 	flag = true;
 	while (flag)
 	{
-		printf("%lu : %lu  \n", t_sum, sum);
 		if (sum >= 4000000)
 		{
 			printf("%lu \n", sum);
