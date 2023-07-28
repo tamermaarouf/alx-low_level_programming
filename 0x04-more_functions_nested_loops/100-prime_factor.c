@@ -1,16 +1,26 @@
 #include <stdio.h>
-#define NUM 612852475143
+
+/*#define NUM 612852475143
+#define NUM 20*/
+
 int main(void)
 {
-	long int prime;
+	long int prime, NUM, index;
 
-	prime = 2;
-	while (prime < NUM)
+	NUM = 612852475143;
+	index = 2;
+	while (index <= NUM)
 	{
-		if (NUM % prime == 0)
-			printf("%ld \n prime: ", prime);
-		prime = prime * prime;
+		if (NUM % index == 0)
+		{
+			prime = index;
+			NUM = NUM / index;
+			index = index;
+		}
+		else
+			++index;
 	}
+	printf("%lu \n", prime);
 
 	return (0);
 }
