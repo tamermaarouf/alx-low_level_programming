@@ -23,7 +23,7 @@ int main(void)
 		n1 = n2;
 		n2 = t_sum;
 		t_sum = n1 + n2;
-		if (sum >= 4000000)
+		if (sum > 4000000)
 			flag = false;
 		else if (t_sum % 2 == 0)
 			sum += t_sum;
