@@ -1,7 +1,10 @@
 #include <stdio.h>
 
-/*#define NUM 612852475143
-#define NUM 20*/
+/**
+ * main - Entry point
+ *
+ * Return: Always return 0 (success)
+ */
 
 int main(void)
 {
