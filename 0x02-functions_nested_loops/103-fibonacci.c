@@ -21,15 +21,13 @@ int main(void)
 	while (flag)
 	{
 		if (sum >= 4000000)
-		{
-			printf("%lu \n", sum);
 			flag = false;
-		}
 		else if (t_sum % 2 == 0)
 			sum += t_sum;
 		n1 = n2;
 		n2 = t_sum;
 		t_sum = n1 + n2;
 	}
+	printf("%lu \n", sum);
 	return (0);
 }
