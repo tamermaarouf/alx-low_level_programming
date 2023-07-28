@@ -12,6 +12,7 @@ int main(void)
 
 	NUM = 612852475143;
 	index = 2;
+	prime = -1;
 	while (index <= NUM)
 	{
 		if (NUM % index == 0)
@@ -23,7 +24,6 @@ int main(void)
 		else
 			++index;
 	}
-	printf("%lu \n", prime);
-
+	printf("%ld\n", prime);
 	return (0);
 }
