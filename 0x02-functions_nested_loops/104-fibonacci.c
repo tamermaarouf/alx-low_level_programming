@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	long unsigned int n1, n2, sum, index;
+	long int n1, n2, sum, index;
 
 	n1 = 1;
 	n2 = 2;
@@ -18,7 +18,7 @@ int main(void)
 	index = sum;
 	while (index <= 98)
 	{
-		if (index == 50)
+		if (index == 98)
 			printf("%lu", sum);
 		else
 		{
