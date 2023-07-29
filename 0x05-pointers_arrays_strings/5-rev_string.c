@@ -19,10 +19,8 @@ void rev_string(char *s)
 	flag = true;
 	while (flag)
 	{
-		if (head > (index / 2))
-		{
+		if (head > (index))
 			flag = false;
-		}
 		else
 		{
 			tmp = *(s + index);
