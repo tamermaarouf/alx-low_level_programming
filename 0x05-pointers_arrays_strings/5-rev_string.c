@@ -11,15 +11,12 @@
 void rev_string(char *s)
 {
 	int index, head;
-	bool flag = true;
 	char tmp;
 
 	index = _strlen(s) - 1;
 	head = 0;
-	while (flag)
+	while (index > 0)
 	{
-		if (index == head)
-			flag = false;
 		tmp = *(s + index);
 		*(s + index) = *(s + head);
 		*(s + head) = tmp;
