@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * puts_half - print half of a string.
+ * @str: pointer of string
+ *
+ * Return: void
+ */
+
 void puts_half(char *str)
 {
 	int count, index;
@@ -16,6 +23,13 @@ void puts_half(char *str)
 	}
 	_putchar('\n');
 }
+
+/**
+ * _strlen - calculate length of string
+ * @s: pointer of string
+ *
+ * Return: length of string
+ */
 
 int _strlen(char *s)
 {
