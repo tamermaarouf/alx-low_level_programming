@@ -8,7 +8,7 @@ void puts_half(char *str)
 	if (count % 2 == 0)
 		index = (count / 2);
 	else
-		index = (count - 1) / 2;
+		index = ((count - 1) / 2) + 1;
 	while (index < count)
 	{
 		_putchar(*(str + index));
