@@ -12,16 +12,25 @@ void rev_string(char *s)
 {
 	int index, head;
 	char tmp;
+	bool flag;
 
 	index = _strlen(s) - 1;
 	head = 0;
-	while (index > 0)
+	flag = true;
+	while (flag)
 	{
-		tmp = *(s + index);
-		*(s + index) = *(s + head);
-		*(s + head) = tmp;
-		++head;
+		if (head > (index / 2))
+		{
+			flag = false;
+		}
+		else
+		{
+			tmp = *(s + index);
+			*(s + index) = *(s + head);
+			*(s + head) = tmp;
+		}
 		--index;
+		++head;
 	}
 }
 
