@@ -14,6 +14,7 @@ void puts_half(char *str)
 		_putchar(*(str + index));
 		++index;
 	}
+	_putchar('\n');
 }
 
 int _strlen(char *s)
