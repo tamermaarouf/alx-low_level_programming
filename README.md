@@ -27,3 +27,4 @@
 * What are the gcc flags -Wall -Werror -pedantic -Wextra -std=gnu89
 * What are header files and how to to use them with #include
 
+# 0x07. C - Even more pointers, arrays and strings
