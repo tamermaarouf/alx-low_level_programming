@@ -18,8 +18,6 @@ char *_strcat(char *dest, char *src)
 		++index;
 		++count;
 	}
-	++index;
-	*(dest + index) = '\0';
 	return (dest);
 }
 
