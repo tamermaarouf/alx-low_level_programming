@@ -22,10 +22,10 @@ void reverse_array(int *a, int n)
 		temp = *(a + length);
 		*(a + length) = *(a + index);
 		*(a + index) = temp;
-		if (index >= length)
-			flag = false;
 		++index;
 		--length;
+		if (index >= length)
+			flag = false;
 	}
 }
 
