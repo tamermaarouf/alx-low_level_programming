@@ -12,14 +12,19 @@
 void reverse_array(int *a, int n)
 {
 	int index, temp, length;
+	bool flag;
 
 	index = 0;
 	length = n - 1;
-	while (index <= length)
+	flag = true;
+	while (flag)
 	{
+		printf("length: %i---index: %i\n", length, index);
 		temp = *(a + length);
 		*(a + length) = *(a + index);
 		*(a + index) = temp;
+		if (index >= length)
+			flag = false;
 		++index;
 		--length;
 	}
