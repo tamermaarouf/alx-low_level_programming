@@ -1,27 +1,31 @@
 #include "main.h"
+#include <stdbool.h>
 /**
- **reverse_array - reverses the content of an array of integers
+ * reverse_array - reverses the content of an arrat of integers
+ * @a: an array of integers
+ * @n: the number of elements of the array
  *
- *@a: the array to be evaluated
- *@n: size of the array
- *
- *Return: nothing
+ * Return: Void
  */
+
 void reverse_array(int *a, int n)
 {
-	int begin, end, temp;
+	int index, temp, length;
+	bool flag;
 
-	begin = 0;
-	end =  0;
-	while (end < (n - 1))
-		end++;
-
-	while (begin <= end)
+	index = 0;
+	length = n - 1;
+	flag = true;
+	while (flag)
 	{
-		temp = *(a + end);
-		*(a + end) = *(a + begin);
-		*(a + begin) = temp;
-		begin++;
-		end--;
+		if (index > (length / 2))
+			flag = false;
+		temp = *(a + length);
+		*(a + length) = *(a + index);
+		*(a + index) = temp;
+		++index;
+		--length;
 	}
 }
+
+
