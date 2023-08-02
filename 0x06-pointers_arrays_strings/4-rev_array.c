@@ -18,7 +18,7 @@ void reverse_array(int *a, int n)
 	flag = true;
 	while (flag)
 	{
-		if (index > (length / 2))
+		if (index >= length)
 			flag = false;
 		temp = *(a + length);
 		*(a + length) = *(a + index);
