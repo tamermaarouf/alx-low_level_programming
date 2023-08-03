@@ -14,11 +14,11 @@ char *string_toupper(char *c)
 	int index;
 
 	index = 0;
-	while (c[index])
+	while (*(c + index))
 	{
-		if ((c[index] >= 'a') && (c[index] <= 'z'))
-			*(c + index) += ('A' - 'a');
-		index++;
+		if ((*(c + index) >= 97) && (*(c + index) <= 122))
+			*(c + index) -= 32;
+		++index;
 	}
 	return (c);
 }
