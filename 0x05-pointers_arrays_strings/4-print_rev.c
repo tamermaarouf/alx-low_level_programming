@@ -23,19 +23,19 @@ void print_rev(char *s)
 
 /**
   * _strlen - Returns the length of a string
-  * @s: String to count
+  * @c: String to count
   *
   * Return: String length
   */
 
-int _strlen(char *s)
+int _strlen(char *c)
 {
 	int count = 0;
 
-	while (*s)
+	while (*c)
 	{
 		++count;
-		s++;
+		c++;
 	}
 	return (count);
 }
