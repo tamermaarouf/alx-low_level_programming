@@ -10,8 +10,9 @@
 
 int main(int argc, char **argv)
 {
-	int mulu = 0;
-	
+	int mulu;
+
+	mulu = 0;
 	if (argc != 3)
 	{
 		printf("Error\n");
