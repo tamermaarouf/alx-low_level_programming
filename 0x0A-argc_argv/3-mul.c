@@ -18,6 +18,6 @@ int main(int argc, char **argv)
 	int mulu = 0;
 
 	mulu = atoi(argv[1]) * atoi(argv[2]);
-	printf("%d\n", mulu);
+	printf("%i\n", mulu);
 	return (0);
 }
