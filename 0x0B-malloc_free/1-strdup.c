@@ -24,9 +24,9 @@ char *_strdup(char *str)
 	index = 0;
 	while (index < size)
 	{
-		*(ptr_char + index) = *(str + index);
+		ptr_char[index] = str[index];
 		index++;
 	}
-	*(ptr_char + index) = '\0';
+	ptr_char[index] = '\0';
 	return (ptr_char);
 }
