@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 	int sum;
 
 	sum = 0;
-	while ((argc-- > 1))
+	while (argc-- > 1)
 	{
 		if (!isdigit(*argv[argc]))
 		{
