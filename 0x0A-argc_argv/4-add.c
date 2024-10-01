@@ -11,9 +11,10 @@
 
 int main(int argc, char **argv)
 {
-	int sum;
+	int sum, i;
 
 	sum = 0;
+	i = 0;
 	if (argc < 2)
 	{
 		printf("%c\n", 48);
@@ -21,12 +22,13 @@ int main(int argc, char **argv)
 	}
 	while (argc-- >= 2)
 	{
+		i = atoi(argv[argc]);
 		if ((*argv[argc] < '0') || (*argv[argc] > '9'))
 		{
 			printf("Error\n");
 			return (1);
 		}
-		sum += atoi(argv[argc]);
+		sum += i;
 	}
 	printf("sum= :%i\n", sum);
 	return (0);
