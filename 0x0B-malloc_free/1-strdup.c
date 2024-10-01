@@ -30,5 +30,6 @@ char *_strdup(char *str)
 		*(ptr_char + index) = *(str + index);
 		index++;
 	}
+	*(ptr_char + index) = '\0';
 	return (ptr_char);
 }
