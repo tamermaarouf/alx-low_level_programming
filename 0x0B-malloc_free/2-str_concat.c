@@ -16,8 +16,6 @@ char *str_concat(char *s1, char *s2)
 
 	size_s1 = _strlen(s1);
 	size_s2 = _strlen(s2);
-	printf("size_s1: %d\n", size_s1);
-	printf("size_s2: %d\n", size_s2);
 	ptr_char = (char *)malloc((sizeof(char) * (size_s1 + size_s2)) + 1);
 	if (ptr_char == NULL)
 		return (NULL);
@@ -38,4 +36,22 @@ char *str_concat(char *s1, char *s2)
 	}
 	*(ptr_char + index) = '\0';
 	return (ptr_char);
+}
+
+
+/**
+ * _strlen - calculates the length of a string point to by s.
+ * @s: pointer to string for calculates
+ *
+ * Return: returns the number of bytes in the string pointed to by s.
+ */
+
+int _strlen(char *s)
+{
+	int length;
+
+	length = 0;
+	while (*(s + length) != '\0')
+		++length;
+	return (length);
 }
