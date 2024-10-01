@@ -7,6 +7,7 @@
  * @str: string which is a duplicate of the string str
  * Return: a pointer to the duplicated string. NULL if str = NULL
  */
+
 char *_strdup(char *str)
 {
 	unsigned int size, index;
@@ -18,7 +19,7 @@ char *_strdup(char *str)
 	index = 0;
 	while (*(str + size) != '\0')
 		size++;
-	ptr_char = (char *)malloc(sizeof(char) * size);
+	ptr_char = (char *)malloc(sizeof(char) * (size + 1));
 	if (ptr_char == NULL)
 		exit(1);
 	index = 0;
