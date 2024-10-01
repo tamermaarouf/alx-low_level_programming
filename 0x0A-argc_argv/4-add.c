@@ -9,18 +9,23 @@
 **/
 int main(int argc, char **argv)
 {
-	int sum;
+	int sum, positive_num;
 
 	sum = 0;
 	while (argc-- > 1)
 	{
+		positive_num = 0;
 		if (*argv[argc] < 48 || *argv[argc] > 57)
 		{
 			printf("Error\n");
 			return (1);
 		}
-		sum += atoi(argv[argc]);
+		else
+		{
+			positive_num = atoi(argv[argc]);
+		}
+		sum += positive_num;
 	}
-	printf("%d\n", sum);
+	printf("%i\n", sum);
 	return (0);
 }
