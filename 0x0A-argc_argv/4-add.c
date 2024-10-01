@@ -14,9 +14,9 @@ int main(int argc, char **argv)
 	int sum;
 
 	sum = 0;
-	while (argc-- >= 2)
+	while ((argc-- >= 2))
 	{
-		if ((*argv[argc] < '0') || (*argv[argc] > '9'))
+		if ((!isdigit(*argv[argc])) || (!isdigit(*argv[argc])))
 		{
 			printf("Error\n");
 			return (1);
