@@ -14,31 +14,32 @@ char *str_concat(char *s1, char *s2)
 	int size_s1, size_s2;
 	char *ptr_char;
 
-	size_s1 = _strlen(s1);
-	size_s2 = _strlen(s2);
-	ptr_char = (char *)malloc((sizeof(char) * (size_s1 + size_s2)) + 1);
-	if (ptr_char == NULL)
-		return (NULL);
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	if ((s1 != NULL) && (s2 != NULL))
+	{
+		size_s1 = _strlen(s1);
+		size_s2 = _strlen(s2);
+		ptr_char = (char *)malloc((sizeof(char) * (size_s1 + size_s2)) + 1);
+		if (ptr_char == NULL)
+			return (NULL);
+	}
 	index_s2 = 0;
 	index = 0;
 	index_s1 = 0;
-	if (s1 != NULL)
+	while (*(s1 + index_s1) != '\0')
 	{
-		while (*(s1 + index_s1) != '\0')
-		{
-			*(ptr_char + index) = *(s1 + index_s1);
-			index++;
-			index_s1++;
-		}
+		*(ptr_char + index) = *(s1 + index_s1);
+		index++;
+		index_s1++;
 	}
-	if (s2 != NULL)
+	while (*(s2 + index_s2) != '\0')
 	{
-		while (*(s2 + index_s2) != '\0')
-		{
-			*(ptr_char + index) = *(s2 + index_s2);
-			index_s2++;
-			index++;
-		}
+		*(ptr_char + index) = *(s2 + index_s2);
+		index_s2++;
+		index++;
 	}
 	*(ptr_char + index) = '\0';
 	return (ptr_char);
