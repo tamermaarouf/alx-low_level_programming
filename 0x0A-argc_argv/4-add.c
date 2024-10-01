@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include "main.h"
 /**
 * main - This program adds positive numbers
 * @argc: Argument count
@@ -14,7 +15,8 @@ int main(int argc, char **argv)
 	sum = 0;
 	while (argc-- > 1)
 	{
-		if (!isdigit(*argv[argc]))
+		printf("%d\n", *argv[argc]);
+		if (*argv[argc] < 48 || *argv[argc] > 57)
 		{
 			printf("Error\n");
 			return (1);
