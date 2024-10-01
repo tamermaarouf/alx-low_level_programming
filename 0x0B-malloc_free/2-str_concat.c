@@ -22,17 +22,23 @@ char *str_concat(char *s1, char *s2)
 	index_s2 = 0;
 	index = 0;
 	index_s1 = 0;
-	while (*(s1 + index_s1) != '\0')
+	if (s1 != NULL)
 	{
-		*(ptr_char + index) = *(s1 + index_s1);
-		index++;
-		index_s1++;
+		while (*(s1 + index_s1) != '\0')
+		{
+			*(ptr_char + index) = *(s1 + index_s1);
+			index++;
+			index_s1++;
+		}
 	}
-	while (*(s2 + index_s2) != '\0')
+	if (s2 != NULL)
 	{
-		*(ptr_char + index) = *(s2 + index_s2);
-		index_s2++;
-		index++;
+		while (*(s2 + index_s2) != '\0')
+		{
+			*(ptr_char + index) = *(s2 + index_s2);
+			index_s2++;
+			index++;
+		}
 	}
 	*(ptr_char + index) = '\0';
 	return (ptr_char);
