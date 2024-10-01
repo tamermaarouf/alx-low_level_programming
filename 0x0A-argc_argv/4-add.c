@@ -12,9 +12,9 @@ int main(int argc, char **argv)
 	int sum;
 
 	sum = 0;
-	while ((argc-- >= 2))
+	while ((argc-- > 1))
 	{
-		if ((!isdigit(*argv[argc])) || (!isdigit(*argv[argc])))
+		if (!isdigit(*argv[argc]))
 		{
 			printf("Error\n");
 			return (1);
