@@ -14,11 +14,6 @@ int main(int argc, char **argv)
 	int sum;
 
 	sum = 0;
-	if (argc < 2)
-	{
-		printf("%c\n", 48);
-		return (0);
-	}
 	while (argc-- >= 2)
 	{
 		if ((*argv[argc] < '0') || (*argv[argc] > '9'))
