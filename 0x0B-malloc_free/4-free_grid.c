@@ -20,5 +20,5 @@ void free_grid(int **grid, int height)
 		free(*(ptr_grid + index));
 		index++;
 	}
-	free(ptr_grid);	
+	free(ptr_grid);
 }
