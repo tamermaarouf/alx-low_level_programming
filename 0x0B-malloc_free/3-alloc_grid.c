@@ -12,7 +12,7 @@ int **alloc_grid(int width, int height)
 {
 	int col, row, **ptr_row;
 
-	if ((width <= 48) || (height <= 48))
+	if ((width <= 0) || (height <= 0))
 		return (NULL);
 	ptr_row = (int **)malloc(sizeof(int *) * width);
 	if (ptr_row == NULL)
