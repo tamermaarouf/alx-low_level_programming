@@ -11,29 +11,40 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *my_dog;
+	unsigned int name_size, owner_size;
 
 	if (name == NULL || owner == NULL)
 		return (NULL);
 	my_dog = malloc(sizeof(dog_t));
 	if (my_dog == NULL)
-	{
-		free(my_dog);
 		return (NULL);
-	}
-	if (name == NULL)
-	{
-		free(my_dog);
-		free(owner);
+	name_size = _strlen(name);
+	owner_size = _strlen(owner);
+	my_dog->name = malloc(sizeof(char) * name_size);
+	if (my_dog->name == NULL)
 		return (NULL);
-	}
-	if (owner == NULL)
-	{
-		free(my_dog);
-		free(owner);
+	my_dog->owner = malloc(sizeof(char) * owner_size);
+	if (my_dog->owner == NULL)
 		return (NULL);
-	}
 	my_dog->name = name;
 	my_dog->age = age;
 	my_dog->owner = owner;
 	return (my_dog);
+}
+
+/**
+ * _strlen - calculates the length of a string point to by s.
+ * @s: pointer to string for calculates
+ *
+ * Return: returns the number of bytes in the string pointed to by s.
+ */
+
+int _strlen(char *s)
+{
+	int length;
+
+	length = 0;
+	while (*s++)
+		++length;
+	return (length);
 }
