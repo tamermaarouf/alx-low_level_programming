@@ -26,9 +26,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	my_dog->owner = malloc(sizeof(char) * owner_size);
 	if (my_dog->owner == NULL)
 		return (NULL);
-	my_dog->name = name;
+	_strcpy(my_dog->name, name);
+	_strcpy(my_dog->owner, owner);
 	my_dog->age = age;
-	my_dog->owner = owner;
 	return (my_dog);
 }
 
@@ -47,4 +47,28 @@ int _strlen(char *s)
 	while (*s++)
 		++length;
 	return (length);
+}
+
+/**
+ * _strcpy - copies the string pointes
+ * @dest: copy the buffer pointed to by dest
+ * @src: the source of string
+ *
+ * Return: the pointer to dest
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int index, counter;
+
+	index = 0;
+	counter = 0;
+	while ((*(dest + counter) = *(src + index)) != '\0')
+	{
+		index++;
+		counter++;
+	}
+	counter++;
+	*(dest + counter) = '\0';
+	return (dest);
 }
