@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include "dog.h"
-#pragma pack(1)
 /**
  * new_dog - a function that creates a new dog.
  * @name: string from main, name of pet
