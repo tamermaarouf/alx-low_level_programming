@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "dog.h"
 #pragma pack(1)
 /**
@@ -21,10 +22,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	name_size = _strlen(name);
 	owner_size = _strlen(owner);
-	my_dog->name = malloc(sizeof(char) * name_size);
+	my_dog->name = malloc(sizeof(char) * (name_size + 1));
 	if (my_dog->name == NULL)
 		return (NULL);
-	my_dog->owner = malloc(sizeof(char) * owner_size);
+	my_dog->owner = malloc(sizeof(char) * (owner_size + 1));
 	if (my_dog->owner == NULL)
 		return (NULL);
 	my_dog->name = _strcpy(my_dog->name, name);
