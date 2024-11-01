@@ -1,5 +1,10 @@
 #include <stdarg.h>
 #include <stdio.h>
+/**
+ * sum_them_all - Write a function that returns the sum of all its parameters.
+ * @n: number of argument
+ * Return: Always return 0.
+ */
 
 int sum_them_all(const unsigned int n, ...)
 {
