@@ -15,6 +15,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		char *next = va_arg(args, char *);
+
 		if (next != NULL)
 			printf("%s", next);
 		else
