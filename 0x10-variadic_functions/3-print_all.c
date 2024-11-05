@@ -51,12 +51,12 @@ void print_all(const char * const format, ...)
 	{
 		s = *(format + i);
 		get_op_func(s, args, &flag);
-		if ((flag) && (*(format + i + 1) != '\0')) 
+		if ((flag) && (*(format + i + 1))) 
             printf(", ");
 		++i;
 	}
-	va_end(args);
 	printf("\n");
+	va_end(args);
 }
 /**
  * print_char - print character.
