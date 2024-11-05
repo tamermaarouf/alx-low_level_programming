@@ -4,6 +4,7 @@
 void print_char(int);
 void print_digit(int);
 void print_str(char *);
+void print_float(double);
 
 void get_op_func(char s, va_list ap, int *fl)
 {
@@ -21,6 +22,10 @@ void get_op_func(char s, va_list ap, int *fl)
 			print_str(va_arg(ap, char *));
 			*fl = 1;
 			break;
+        case 'f':
+            print_float(va_arg(ap, double));
+            *fl = 1;
+            break;
 		default:
 			*fl = 0;
 	}
@@ -61,4 +66,8 @@ void print_str(char *s)
 void print_digit(int a)
 {
 	printf("%i", a);
+}
+void print_float(double d)
+{
+    printf("%f", d);
 }
