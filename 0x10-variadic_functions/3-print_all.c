@@ -1,5 +1,4 @@
 #include "variadic_functions.h"
-#include <string.h>
 
 void print_char(int);
 void print_digit(int);
@@ -47,7 +46,7 @@ void print_all(const char * const format, ...)
 	char s;
 
 	va_start(args, format);
-	while (*(format + i) != '\0')
+	while (*(format + i) && format)
 	{
 		s = *(format + i);
 		get_op_func(s, args, &flag);
