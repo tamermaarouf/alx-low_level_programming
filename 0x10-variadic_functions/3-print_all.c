@@ -56,9 +56,9 @@ void print_char(int c)
 }
 void print_str(char *s)
 {
-	if (s == NULL)
+	if (!s)
 	{
-		printf("nil");
+		printf("(nil)");
 		return;
 	}
 	printf("%s", s);
