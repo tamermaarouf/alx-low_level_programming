@@ -19,20 +19,16 @@ void get_op_func(char s, va_list ap, int *fl)
 	switch (s)
 	{
 		case 'c':
-			print_char(va_arg(ap, int));
-			*fl = 1;
+			print_char(va_arg(ap, int)), *fl = 1;
 			break;
 		case 'i':
-			print_digit(va_arg(ap, int));
-			*fl = 1;
+			print_digit(va_arg(ap, int)), *fl = 1;
 			break;
 		case 's':
-			print_str(va_arg(ap, char *));
-			*fl = 1;
+			print_str(va_arg(ap, char *)), *fl = 1;
 			break;
         case 'f':
-            print_float(va_arg(ap, double));
-            *fl = 1;
+            print_float(va_arg(ap, double)), *fl = 1;
             break;
 		default:
 			*fl = 0;
