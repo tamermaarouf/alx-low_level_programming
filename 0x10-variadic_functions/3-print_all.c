@@ -9,27 +9,23 @@
 
 void get_op_func(char s, va_list ap, int *fl)
 {
-	char *str;
+	op_t ops[] = {
+		{"c", print_char},
+		{"i", print_digit},
+		{"s", print_string},
+		{"f", print_float},
+		{NULL, NULL}
+	};
+	int i = 0;
 
-	switch (s)
+	while ((ops + i)->op)
 	{
-		case 'c':
-			printf("%c", va_arg(ap, int)), *fl = 1;
-			break;
-		case 'i':
-			printf("%i", va_arg(ap, int)), *fl = 1;
-			break;
-		case 's':
-			str = va_arg(ap, char *);
-			if (!str)
-				printf("(nil)");
-			printf("%s", str), *fl = 1;
-			break;
-		case 'f':
-			printf("%f", va_arg(ap, double)), *fl = 1;
-			break;
-		default:
-			*fl = 0;
+		if (*(ops + i)->op == s)
+		{
+			(ops + i)->f(ap);
+			*fl = 1;
+		}
+		++i;
 	}
 }
 /**
@@ -46,14 +42,31 @@ void print_all(const char * const format, ...)
 	char s;
 
 	va_start(args, format);
-	while (*(format + i) && format)
+	while (format[i] && format)
 	{
-		s = *(format + i);
+		s = format[i];
 		get_op_func(s, args, &flag);
 		if ((flag) && (*(format + i + 1)))
 			printf(", ");
 		++i;
+		flag = 0;
 	}
 	printf("\n");
 	va_end(args);
 }
+
+void print_char(va_list c) { printf("%c", va_arg(c, int)); }
+void print_digit(va_list d) { printf("%i", va_arg(d, int)); }
+void print_string(va_list str)
+{
+	char *_str = va_arg(str, char *);
+
+	if (!_str)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", _str);
+}
+
+void print_float(va_list fl) { printf("%f", va_arg(fl, double)); }
