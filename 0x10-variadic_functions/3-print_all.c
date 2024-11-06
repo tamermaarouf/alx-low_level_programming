@@ -19,7 +19,10 @@ void get_op_func(char s, va_list ap, int *fl)
 			break;
 		case 's':
 			if (!s)
+			{
 				printf("(nil)");
+				break;
+			}
 			printf("%s", va_arg(ap, char *)), *fl = 1;
 			break;
 		case 'f':
