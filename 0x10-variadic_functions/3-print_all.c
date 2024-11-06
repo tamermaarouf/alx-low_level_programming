@@ -12,11 +12,37 @@ typedef struct op
 	void (*f)(va_list);
 } op_t;
 
-
+void get_op_func(char, va_list, int *);
 void print_char(va_list);
 void print_digit(va_list);
 void print_string(va_list);
 void print_float(va_list);
+
+/**
+ * print_all - prints anything.
+ * @format: a list of types of arguments passed to the function.
+ * Return: no return.
+ */
+
+void print_all(const char * const format, ...)
+{
+	va_list args;
+	int i = 0;
+	int flag = 0;
+
+	va_start(args, format);
+	while (format[i] && format)
+	{
+		get_op_func(format[i], args, &flag);
+		if ((flag) && (*(format + i + 1)))
+			printf(", ");
+		++i;
+		flag = 0;
+	}
+	printf("\n");
+	va_end(args);
+}
+
 /**
  * get_op_func - funtion get function to print
  * @s: list of type format
@@ -36,8 +62,15 @@ void get_op_func(char s, va_list ap, int *fl)
 	};
 	int i = 0;
 
-	while (ops[i].op != NULL)
+	while (ops[i].op)
 	{
+		/*char spec = *(ops + i)->op;
+		switch (spec)
+		{
+			case '\0':
+				ops[i].f(ap), *fl =1;
+				break;
+		}*/
 		if (*(ops + i)->op == s)
 		{
 			ops[i].f(ap);
@@ -46,30 +79,6 @@ void get_op_func(char s, va_list ap, int *fl)
 		i++;
 	}
 }
-/**
- * print_all - prints anything.
- * @format: a list of types of arguments passed to the function.
- * Return: no return.
- */
-
-void print_all(const char * const format, ...)
-{
-	va_list args;
-	unsigned int i = 0;
-	int flag = 0;
-
-	va_start(args, format);
-	while (*(format + i) && format)
-	{
-		get_op_func(*(format + i), args, &flag);
-		if ((flag) && (*(format + i + 1)))
-			printf(", ");
-		++i;
-		flag = 0;
-	}
-	printf("\n");
-	va_end(args);
-}
 
 void print_char(va_list c) { printf("%c", va_arg(c, int)); }
 void print_digit(va_list d) { printf("%i", va_arg(d, int)); }
@@ -77,12 +86,21 @@ void print_string(va_list str)
 {
 	char *_str = va_arg(str, char *);
 
-	if (!_str)
+	switch (*_str)
+	{
+		case '\0':
+			printf("(nil)");
+			break;
+		default:
+			printf("%s", _str);
+	}
+
+	/*if (_str == NULL)
 	{
 		printf("(nil)");
 		return;
 	}
-	printf("%s", _str);
+	printf("%s", _str);*/
 }
 
 void print_float(va_list fl) { printf("%f", va_arg(fl, double)); }
