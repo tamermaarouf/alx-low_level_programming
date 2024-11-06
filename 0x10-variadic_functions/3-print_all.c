@@ -65,6 +65,8 @@ void print_string(va_list arg)
 		case '\0':
 			printf("(nil)");
 			break;
+		case (!_str):
+
 		default:
 			printf("%s", _str);
 	}
