@@ -22,10 +22,7 @@ void get_op_func(char s, va_list ap, int *fl)
 		case 's':
 			str = va_arg(ap, char *);
 			if (!str)
-			{
 				printf("(nil)");
-				break;
-			}
 			printf("%s", str), *fl = 1;
 			break;
 		case 'f':
