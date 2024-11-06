@@ -31,7 +31,7 @@ void print_all(const char * const format, ...)
 	int flag = 0;
 
 	va_start(args, format);
-	while (format[i] && format)
+	while (format && format[i])
 	{
 		get_op_func(format[i], args, &flag);
 		if ((flag) && (*(format + i + 1)))
@@ -64,16 +64,9 @@ void get_op_func(char s, va_list ap, int *fl)
 
 	while (ops[i].op)
 	{
-		/*char spec = *(ops + i)->op;
-		switch (spec)
-		{
-			case '\0':
-				ops[i].f(ap), *fl =1;
-				break;
-		}*/
 		if (*(ops + i)->op == s)
 		{
-			ops[i].f(ap);
+			(ops + i)->f(ap);
 			*fl = 1;
 		}
 		i++;
@@ -94,13 +87,6 @@ void print_string(va_list str)
 		default:
 			printf("%s", _str);
 	}
-
-	/*if (_str == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
-	printf("%s", _str);*/
 }
 
 void print_float(va_list fl) { printf("%f", va_arg(fl, double)); }
