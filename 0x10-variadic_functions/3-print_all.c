@@ -18,7 +18,7 @@ void get_op_func(char s, va_list ap, int *fl)
 			printf("%i", va_arg(ap, int)), *fl = 1;
 			break;
 		case 's':
-			if (!s)
+			if (!va_arg(ap, char *))
 			{
 				printf("(nil)");
 				break;
