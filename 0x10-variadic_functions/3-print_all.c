@@ -9,6 +9,8 @@
 
 void get_op_func(char s, va_list ap, int *fl)
 {
+	char *str;
+
 	switch (s)
 	{
 		case 'c':
@@ -18,12 +20,13 @@ void get_op_func(char s, va_list ap, int *fl)
 			printf("%i", va_arg(ap, int)), *fl = 1;
 			break;
 		case 's':
-			if (!va_arg(ap, char *))
+			str = va_arg(ap, char *);
+			if (!str)
 			{
 				printf("(nil)");
 				break;
 			}
-			printf("%s", va_arg(ap, char *)), *fl = 1;
+			printf("%s", str), *fl = 1;
 			break;
 		case 'f':
 			printf("%f", va_arg(ap, double)), *fl = 1;
