@@ -1,5 +1,23 @@
 #include "variadic_functions.h"
 /**
+ * struct op - Struct op
+ *
+ * @op: The operator
+ * @f: The function associated
+ */
+
+typedef struct op
+{
+	char *op;
+	void (*f)(va_list);
+} op_t;
+
+
+void print_char(va_list);
+void print_digit(va_list);
+void print_string(va_list);
+void print_float(va_list);
+/**
  * get_op_func - funtion get function to print
  * @s: list of type format
  * @ap: pionter too list
