@@ -18,6 +18,8 @@ void get_op_func(char s, va_list ap, int *fl)
 			printf("%i", va_arg(ap, int)), *fl = 1;
 			break;
 		case 's':
+			if (!s)
+				printf("(nil)");
 			printf("%s", va_arg(ap, char *)), *fl = 1;
 			break;
 		case 'f':
@@ -32,6 +34,7 @@ void get_op_func(char s, va_list ap, int *fl)
  * @format: a list of types of arguments passed to the function.
  * Return: no return.
  */
+
 void print_all(const char * const format, ...)
 {
 	va_list args;
