@@ -1,24 +1,5 @@
 #include "variadic_functions.h"
 /**
- * struct op - Struct op
- *
- * @op: The operator
- * @f: The function associated
- */
-
-typedef struct op
-{
-	char *op;
-	void (*f)(va_list);
-} op_t;
-
-void get_op_func(char, va_list, int *);
-void print_char(va_list);
-void print_digit(va_list);
-void print_string(va_list);
-void print_float(va_list);
-
-/**
  * print_all - prints anything.
  * @format: a list of types of arguments passed to the function.
  * Return: no return.
@@ -64,7 +45,7 @@ void get_op_func(char s, va_list ap, int *fl)
 
 	while (ops[i].op)
 	{
-		if (*(ops + i)->op == s)
+		if ((*(ops + i)->op) == s)
 		{
 			(ops + i)->f(ap);
 			*fl = 1;
@@ -73,11 +54,11 @@ void get_op_func(char s, va_list ap, int *fl)
 	}
 }
 
-void print_char(va_list c) { printf("%c", va_arg(c, int)); }
-void print_digit(va_list d) { printf("%i", va_arg(d, int)); }
-void print_string(va_list str)
+void print_char(va_list arg) { printf("%c", va_arg(arg, int)); }
+void print_digit(va_list arg) { printf("%d", va_arg(arg, int)); }
+void print_string(va_list arg)
 {
-	char *_str = va_arg(str, char *);
+	char *_str = va_arg(arg, char *);
 
 	switch (*_str)
 	{
@@ -89,4 +70,4 @@ void print_string(va_list str)
 	}
 }
 
-void print_float(va_list fl) { printf("%f", va_arg(fl, double)); }
+void print_float(va_list arg) { printf("%f", va_arg(arg, double)); }
