@@ -36,14 +36,14 @@ void get_op_func(char s, va_list ap, int *fl)
 	};
 	int i = 0;
 
-	while ((ops + i)->op)
+	while (ops[i].op != NULL)
 	{
 		if (*(ops + i)->op == s)
 		{
-			(ops + i)->f(ap);
+			ops[i].f(ap);
 			*fl = 1;
 		}
-		++i;
+		i++;
 	}
 }
 /**
@@ -57,13 +57,11 @@ void print_all(const char * const format, ...)
 	va_list args;
 	unsigned int i = 0;
 	int flag = 0;
-	char s;
 
 	va_start(args, format);
-	while (format[i] && format)
+	while (*(format + i) && format)
 	{
-		s = format[i];
-		get_op_func(s, args, &flag);
+		get_op_func(*(format + i), args, &flag);
 		if ((flag) && (*(format + i + 1)))
 			printf(", ");
 		++i;
