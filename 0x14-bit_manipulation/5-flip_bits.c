@@ -17,7 +17,6 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	while (diff)
 	{
-		printf("%lu\n", diff);
 		counter++;
 		diff &= (diff - 1);
 	}
