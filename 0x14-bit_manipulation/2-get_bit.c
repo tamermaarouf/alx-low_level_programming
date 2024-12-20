@@ -14,6 +14,8 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned long int mask = 1 << index;
 	unsigned int pos;
 
+	if (index > 63)
+		return (-1);
 	for (pos = 12; pos > 0; --pos)
 	{
 		if (pos == index)
