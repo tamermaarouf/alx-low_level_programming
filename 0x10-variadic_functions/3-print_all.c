@@ -54,8 +54,23 @@ void get_op_func(char s, va_list ap, int *fl)
 	}
 }
 
+/**
+ * print_char - function to print char
+ * @arg: pointer to list
+ * Return: void
+ */
 void print_char(va_list arg) { printf("%c", va_arg(arg, int)); }
+/**
+ * print_digit - funtion to print int
+ * @arg: pointer to list
+ * Return: void
+ */
 void print_digit(va_list arg) { printf("%d", va_arg(arg, int)); }
+/**
+ * print_string - function to print string
+ * @arg: pointer to list
+ * Return: void
+ */
 void print_string(va_list arg)
 {
 	char *_str = va_arg(arg, char *);
@@ -69,5 +84,9 @@ void print_string(va_list arg)
 			printf("%s", _str);
 	}
 }
-
+/**
+ * print_float - function to print float, double
+ * @arg: pointer to list
+ * Return: void
+ */
 void print_float(va_list arg) { printf("%f", va_arg(arg, double)); }
