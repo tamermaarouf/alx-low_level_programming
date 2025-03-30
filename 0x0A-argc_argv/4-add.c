@@ -11,7 +11,7 @@
 
 int main(int argc, char *argv[])
 {
-	int sum, positive_num;
+	int sum, positive_num = 0;
 
 	sum = 0;
 	while (argc-- > 1)
