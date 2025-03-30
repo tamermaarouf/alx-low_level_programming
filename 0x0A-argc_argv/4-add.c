@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	int sum, positive_num = 0;
 
 	sum = 0;
-	if (argc < 1)
+	if (argc < 2)
 		printf("0\n");
 	else
 	{
