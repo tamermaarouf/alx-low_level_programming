@@ -14,17 +14,21 @@ int main(int argc, char *argv[])
 	int sum, positive_num = 0;
 
 	sum = 0;
-	while (argc-- > 1)
+	if (argc > 1)
 	{
-		if (*argv[argc] < 48 || *argv[argc] > 57)
+		while (argc-- > 1)
 		{
-			printf("Error\n");
-			return (1);
+			if (*argv[argc] < 48 || *argv[argc] > 57)
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		else
-			positive_num =  atoi(argv[argc]);
+		positive_num =  atoi(argv[argc]);
 		sum += positive_num;
+		printf("%i\n", sum);
 	}
-	printf("%i\n", sum);
+	else
+		printf("%d\n", 0);
 	return (0);
 }
