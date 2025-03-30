@@ -30,6 +30,6 @@ int main(int argc, char *argv[])
 		printf("%i\n", sum);
 	}
 	else
-		printf("0\n");
+		printf("%c\n", 48);
 	return (0);
 }
