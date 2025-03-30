@@ -15,9 +15,11 @@ int main(int argc, char *argv[])
 	int sum, positive_num = 0;
 
 	sum = 0;
-	if (argc >= 1)
+	if (argc < 1)
+		printf("0\n");
+	else
 	{
-		while (argc-- > 1)
+		while (--argc >= 1)
 		{
 			if (!(isdigit(*argv[argc])))
 			{
@@ -30,7 +32,5 @@ int main(int argc, char *argv[])
 		}
 		printf("%i\n", sum);
 	}
-	else
-		printf("%c\n", 48);
 	return (0);
 }
