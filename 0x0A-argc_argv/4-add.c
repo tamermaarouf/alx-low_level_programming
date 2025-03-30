@@ -23,9 +23,10 @@ int main(int argc, char *argv[])
 				printf("Error\n");
 				return (1);
 			}
+			else
+				positive_num =  atoi(argv[argc]);
+			sum += positive_num;
 		}
-		positive_num =  atoi(argv[argc]);
-		sum += positive_num;
 		printf("%i\n", sum);
 	}
 	else
