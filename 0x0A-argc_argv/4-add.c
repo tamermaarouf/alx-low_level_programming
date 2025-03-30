@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	{
 		while (argc-- > 1)
 		{
-			if (*argv[argc] < 48 || *argv[argc] > 57)
+			if (*argv[argc] < 47 || *argv[argc] > 57)
 			{
 				printf("Error\n");
 				return (1);
