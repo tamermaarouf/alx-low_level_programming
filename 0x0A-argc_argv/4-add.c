@@ -14,11 +14,12 @@ int main(int argc, char *argv[])
 	int sum, positive_num = 0;
 
 	sum = 0;
-	if (argc > 0)
+	if (argc > 1)
 	{
+		printf("%d\n", argc);
 		while (argc-- > 1)
 		{
-			if (*argv[argc] < 47 || *argv[argc] > 57)
+			if (*argv[argc] < 48 || *argv[argc] > 57)
 			{
 				printf("Error\n");
 				return (1);
