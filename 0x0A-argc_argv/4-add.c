@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include "main.h"
 
 /**
@@ -18,7 +19,7 @@ int main(int argc, char *argv[])
 	{
 		while (argc-- > 1)
 		{
-			if (*argv[argc] < 48 || *argv[argc] > 57)
+			if (!(isdigit(*argv[argc])))
 			{
 				printf("Error\n");
 				return (1);
