@@ -16,7 +16,6 @@ int main(int argc, char *argv[])
 	sum = 0;
 	if (argc > 1)
 	{
-		printf("%d\n", argc);
 		while (argc-- > 1)
 		{
 			if (*argv[argc] < 48 || *argv[argc] > 57)
