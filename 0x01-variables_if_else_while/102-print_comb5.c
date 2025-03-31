@@ -16,10 +16,10 @@ int main(void)
 		hun = 48;
 		while (hun < 58)
 		{
+			one = hun + 1;
 			ten = tho;
 			while (ten < 58)
 			{
-				one = hun + 1;
 				while (one < 58)
 				{
 					putchar(tho);
@@ -35,6 +35,7 @@ int main(void)
 					one++;
 				}
 				ten++;
+				one = 48;
 			}
 			hun++;
 		}
