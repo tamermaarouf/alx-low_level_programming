@@ -19,21 +19,18 @@ int main(void)
 			ten = 48;
 			while (ten < 58)
 			{
-				one = 49;
+				one = hun + 1;
 				while (one < 58)
 				{
 					if (ten >= tho)
 					{
-						if ((one > hun) && (ten >= tho))
-						{
-							putchar(tho);
-							putchar(hun);
-							putchar(' ');
-							putchar(ten);
-							putchar(one);
-							putchar(',');
-							putchar(' ');
-						}
+						putchar(tho);
+						putchar(hun);
+						putchar(' ');
+						putchar(ten);
+						putchar(one);
+						putchar(',');
+						putchar(' ');
 					}
 					one++;
 				}
