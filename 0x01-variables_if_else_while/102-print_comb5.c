@@ -16,19 +16,19 @@ int main(void)
 		hun = 48;
 		while (hun < 58)
 		{
-			ten = 48;
+			ten = tho;
 			while (ten < 58)
 			{
 				one = hun + 1;
 				while (one < 58)
 				{
-					if (ten >= tho)
+					putchar(tho);
+					putchar(hun);
+					putchar(' ');
+					putchar(ten);
+					putchar(one);
+					if (tho != 57 || ten != 57 || hun != 56 || one != 57)
 					{
-						putchar(tho);
-						putchar(hun);
-						putchar(' ');
-						putchar(ten);
-						putchar(one);
 						putchar(',');
 						putchar(' ');
 					}
