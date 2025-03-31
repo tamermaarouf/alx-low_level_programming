@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		printf("0\n");
 	else
 	{
-		while (--argc >= 1)
+		while (argc-- > 1)
 		{
 			if (!(isdigit(*argv[argc])))
 			{
@@ -27,10 +27,12 @@ int main(int argc, char *argv[])
 				return (1);
 			}
 			else
+			{
 				positive_num =  atoi(argv[argc]);
-			sum += positive_num;
+				sum += positive_num;
+			}
 		}
-		printf("%i\n", sum);
+		printf("%d\n", sum);
 	}
 	return (0);
 }
