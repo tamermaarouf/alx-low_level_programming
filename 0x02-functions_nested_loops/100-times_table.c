@@ -14,11 +14,11 @@ void print_times_table(int n)
 		int count, index, result;
 
 		count = 0;
-		while (count++ <= n)
+		while (count++ < n)
 		{
 			index = 1;
 			_putchar(48);
-			while (index++ <= n)
+			while (index++ < n)
 			{
 				_putchar(',');
 				_putchar(' ');
