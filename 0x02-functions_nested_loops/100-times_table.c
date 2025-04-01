@@ -9,18 +9,18 @@
  */
 void print_times_table(int n)
 {
-	if ((n > 0) && (n < 15))
+	if ((n > 0) && (n <= 15))
 	{
 		int count, index, result;
 
 		count = 0;
-		while (count <= n)
+		while (count++ <= n)
 		{
 			index = 1;
 			_putchar(48);
-			_putchar(',');
-			while (index <= n)
+			while (index++ <= n)
 			{
+				_putchar(',');
 				_putchar(' ');
 				result = index * count;
 				if (result <= 99)
@@ -35,14 +35,8 @@ void print_times_table(int n)
 				else if (result > 9 && result <= 99)
 					_putchar((result / 10) + 48);
 				_putchar((result % 10) + 48);
-				if (index != n)
-					_putchar(',');
-				else
-					_putchar('\n');
-
-				index++;
 			}
-			count++;
+			_putchar('\n');
 		}
 	}
 }
