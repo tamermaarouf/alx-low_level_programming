@@ -23,19 +23,38 @@ void print_times_table(int n)
 				result = index * count;
 				if (index != n)
 				{
-					if (((index + 1) * count) <= 9)
-						printf("%i,   ", result);
-					else if (((index + 1) * count) <= 99)
-						printf("%i,  ", result);
+					if (result <= 9)
+					{
+						_putchar(result + 48);
+						_putchar(',');
+						_putchar(' ');
+						_putchar(' ');
+						_putchar(' ');
+					}
+					else if ((result <= 99) && (result > 9))
+					{
+						_putchar((result / 10) + 48);
+						_putchar((result % 10) + 48);
+						_putchar(',');
+						_putchar(' ');
+						_putchar(' ');
+					}
 					else
-						printf("%i, ", result);
+					{
+						_putchar(result);
+						_putchar(',');
+						_putchar(' ');
+					}
 				}
 				else
-					printf("%i\n", result);
+				{
+					_putchar(result + 48);
+					_putchar('\n');
+				}
 				index++;
 			}
 			count++;
 		}
-		printf("\n");
+		_putchar('\n');
 	}
 }
