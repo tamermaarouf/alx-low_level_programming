@@ -5,12 +5,11 @@
  * Return: Always 0.
  */
 
-int main()
+int main(void)
 {
-	int counter, sum = 0;
-	
-	counter = 0;
-	while(counter < 1024)
+	int counter = 0, sum = 0;
+
+	while (counter < 1024)
 	{
 		if (counter % 3 == 0 || counter % 5 == 0)
 			sum += counter;
