@@ -1,9 +1,4 @@
 #include <stdio.h>
-/**
- * main -  that the program prints a[2] = 98, followed by a new line.
- *
- * Return: Always return 0
- */
 
 int main(void)
 {
