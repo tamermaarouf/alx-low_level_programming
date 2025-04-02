@@ -8,9 +8,6 @@ int main(void)
 	
 	a[2] = 1024;
 	p = &n;
-	printf("a = %p\n", (void *)a);
-	printf("p = %p\n", (void *)p);
-	printf("n = %p\n", (void *)&n);
 	/*
 	 * write your line of code here...
    * Remember:
