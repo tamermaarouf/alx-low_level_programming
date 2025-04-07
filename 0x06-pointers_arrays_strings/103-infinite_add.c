@@ -15,7 +15,7 @@
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int index_n1, len_n1, len_n2, sum, a, b, reminder;
+	int index_n1, len_n1 = 0, len_n2 = 0, sum = 0, a = 0, b, reminder = 0;
 
 	len_n1 = _strlen(n1);
 	len_n2 = _strlen(n2);
@@ -25,8 +25,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		index_n1 = len_n2;
 	if ((index_n1 + 1) >= size_r)
 		return (0);
-	r[(index_n1) + 1] = '\0';
-	a = 0, b = 0, reminder = 0, sum = 0;
+	r[index_n1 + 1] = '\0';
 	len_n1 -= 1, len_n2 -= 1;
 	while (index_n1 >= 0)
 	{
