@@ -31,7 +31,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	len_n2 -= 1;
 	while (index_n1 >= 0)
 	{
-		printf("ind = %d\n", index_n1);
 		a = n1[len_n1];
 		b = n2[len_n2];
 		if ((len_n1 >= 0) && (len_n2 >= 0))
