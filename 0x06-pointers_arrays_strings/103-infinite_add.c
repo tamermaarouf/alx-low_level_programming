@@ -27,8 +27,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		return (0);
 	r[(index_n1) + 1] = '\0';
 	a = 0, b = 0, reminder = 0, sum = 0;
-	len_n1 -= 1;
-	len_n2 -= 1;
+	len_n1 -= 1, len_n2 -= 1;
 	while (index_n1 >= 0)
 	{
 		a = n1[len_n1];
@@ -46,15 +45,13 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			reminder = sum / 10;
 			sum = ((sum % 10) + 48);
 		}
-		else 
+		else
 		{
 			reminder = 0;
 			sum = (sum + 48);
 		}
 		r[index_n1] = sum;
-		len_n1--;
-		len_n2--;
-		index_n1--;
+		len_n1--, len_n2--, index_n1--;
 	}
 	return (r);
 }
