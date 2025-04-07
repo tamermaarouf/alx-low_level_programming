@@ -33,9 +33,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		b = (n2[len_n2]);
 		if ((len_n1 >= 0) && (len_n2 >= 0))
 			sum = (a - 48) + (b - 48) + reminder;
-		else if (len_n1 > 0 && len_n2 < 0)
+		else if (len_n1 >= 0 && len_n2= < 0)
 			sum = (a - 48) + reminder;
-		else if (len_n1 < 0 && len_n2 > 0)
+		else if (len_n1 <= 0 && len_n2 >= 0)
 			sum = (b - 48) + reminder;
 		else
 			sum = reminder;
