@@ -17,25 +17,28 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int index_n1, len_n1, len_n2, sum, a, b, reminder;
 
-	len_n1 = _strlen(n1) - 1;
-	len_n2 = _strlen(n2) - 1;
-	if (len_n1 > len_n2)
+	len_n1 = _strlen(n1);
+	len_n2 = _strlen(n2);
+	if (len_n1 >= len_n2)
 		index_n1 = len_n1;
 	else
 		index_n1 = len_n2;
-	if ((index_n1 + 2) >= size_r)
+	if ((index_n1 + 1) >= size_r)
 		return (0);
-	r[(index_n1 + 1)] = '\0';
+	r[(index_n1) + 1] = '\0';
 	a = 0, b = 0, reminder = 0, sum = 0;
+	len_n1 -= 1;
+	len_n2 -= 1;
 	while (index_n1 >= 0)
 	{
-		a = (n1[len_n1]);
-		b = (n2[len_n2]);
+		printf("ind = %d\n", index_n1);
+		a = n1[len_n1];
+		b = n2[len_n2];
 		if ((len_n1 >= 0) && (len_n2 >= 0))
 			sum = (a - 48) + (b - 48) + reminder;
-		else if (len_n1 > 0 && len_n2 < 0)
+		else if (len_n1 >= 0 && len_n2 < 0)
 			sum = (a - 48) + reminder;
-		else if (len_n1 < 0 && len_n2 > 0)
+		else if (len_n1 < 0 && len_n2 >= 0)
 			sum = (b - 48) + reminder;
 		else
 			sum = reminder;
@@ -44,7 +47,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			reminder = sum / 10;
 			sum = ((sum % 10) + 48);
 		}
-		else
+		else 
 		{
 			reminder = 0;
 			sum = (sum + 48);
