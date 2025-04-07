@@ -52,10 +52,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[index_n1] = sum;
 		len_n1--, len_n2--, index_n1--;
 	}
-	if (*r != 0)
-		return (r);
-	else
-		return (r + 1);
+	return (r);
 }
 
 /**
