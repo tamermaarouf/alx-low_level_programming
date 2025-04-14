@@ -26,6 +26,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	len_n1 -= 1, len_n2 -= 1;
 	if ((index_n1 + 1) >= size_r)
 		return (0);
+	r[index_n1 + 1] = '\0';
 	while (index_n1 >= 0)
 	{
 		a = n1[len_n1];
@@ -51,7 +52,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[index_n1] = sum;
 		len_n1--, len_n2--, index_n1--;
 	}
-	r[index_n1 + 1] = '\0';
 	return (r);
 }
 
