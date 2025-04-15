@@ -23,8 +23,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		index_n1 = len_n1;
 	else
 		index_n1 = len_n2;
-	++index_n1;
-	if ((index_n1 + 1) >= size_r)
+	printf("size_r=%d, index_n1=%d\n", size_r, index_n1);
+	if ((++index_n1 + 1) >= size_r)
 		return (0);
 	r[index_n1 + 1] = '\0';
 	while (index_n1 >= 0)
