@@ -48,8 +48,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			reminder = 0;
 			sum = (sum + 48);
 		}
-		r[index_n1] = sum;
-		index_n1--;
+		r[index_n1--] = sum;
 	}
 	return (r);
 }
