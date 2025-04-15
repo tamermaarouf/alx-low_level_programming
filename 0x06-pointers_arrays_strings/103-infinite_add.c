@@ -50,7 +50,10 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		}
 		r[index_n1--] = sum;
 	}
-	return (r);
+	if (*(r) != 0)
+		return (r);
+	else
+		return (r + 1);
 }
 
 /**
