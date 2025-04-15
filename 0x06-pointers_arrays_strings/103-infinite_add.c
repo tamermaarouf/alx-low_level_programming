@@ -17,19 +17,19 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int index_n1, len_n1 = 0, len_n2 = 0, sum = 0, a = 0, b, reminder = 0;
 
-	len_n1 = _strlen(n1) - 1;
-	len_n2 = _strlen(n2) - 1;
+	len_n1 = _strlen(n1);
+	len_n2 = _strlen(n2);
 	if (len_n1 >= len_n2)
 		index_n1 = len_n1;
 	else
 		index_n1 = len_n2;
-	if ((++index_n1 + 1) >= size_r)
+	if ((index_n1 + 1) >= size_r)
 		return (0);
 	r[index_n1 + 1] = '\0';
 	while (index_n1 >= 0)
 	{
-		a = n1[len_n1];
-		b = n2[len_n2];
+		a = n1[--len_n1];
+		b = n2[--len_n2];
 		if ((len_n1 >= 0) && (len_n2 >= 0))
 			sum = (a - 48) + (b - 48) + reminder;
 		else if (len_n1 >= 0 && len_n2 < 0)
@@ -49,7 +49,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			sum = (sum + 48);
 		}
 		r[index_n1] = sum;
-		len_n1--, len_n2--, index_n1--;
+		index_n1--;
 	}
 	return (r);
 }
